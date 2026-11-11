@@ -1,0 +1,225 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #000000;
+    --gray-color: #888888;
+    --light-gray: #f5f5f5;
+    --border-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    color: var(--accent-color);
+}
+
+header h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--gray-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+figure {
+    margin: 20px 0;
+}
+
+header img {
+    border-radius: 50%;
+    border: 3px solid var(--light-gray);
+    padding: 5px;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+header img:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    margin-top: 12px;
+    font-style: italic;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap; 
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+main {
+    padding: 50px 0;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+section p {
+    color: #444;
+}
+
+#hobby ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+#hobby li {
+    background: var(--light-gray);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hobby li:hover {
+    transform: translateY(-5px);
+    background: #eeeeee;
+}
+
+#hobby li strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+#hobby li figure {
+    margin: auto 0 0 0; 
+    width: 100%;
+    text-align: center;
+}
+
+#hobby img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    margin: 20px auto 0;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+}
+
+#hobby li:hover img {
+    filter: grayscale(0%);
+}
+
+#contact ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap; 
+}
+
+#contact a {
+    display: inline-block; 
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border: 1px solid var(--accent-color);
+}
+
+#contact a:hover {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--gray-color);
+}
+
+@media (max-width: 768px) {
+    #hobby ul {
+        grid-template-columns: 1fr;
+    }
+}
